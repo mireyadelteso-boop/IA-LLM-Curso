@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mireya del Teso — Currículum</title>
+  <meta name="description" content="Currículum de Mireya del Teso, Ingeniera Informática especializada en calidad, automatización y liderazgo técnico." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Paleta Minimalista y Focalizada */
+    :root {
+      --bg: #f9f9f9; /* Fondo muy suave */
+      --ink: #1f2937; /* Tinta principal (gris oscuro) */
+      --muted: #6b7280; /* Texto secundario */
+      --line: #e5e7eb; /* Líneas divisorias muy finas */
+      --primary-color: #0077b6; /* Azul marino/claro para acento principal */
+      --secondary-color: #48cae4; /* Azul brillante para acento visual */
+      --accent-badge: #e0f6ff; /* Fondo claro para badges */
+      --accent-badge-text: #005691; /* Texto para badges */
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ===== Layout - Diseño de una sola columna sin cajas ===== */
+    .layout {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 1000px; /* Más estrecho para mejor lectura */
+      margin: 0 auto;
+      padding: 60px 40px; 
+    }
+
+    /* ========================================================= */
+    /* ===== Cabecera Superior (Hero Section) - Simplificada ===== */
+    /* ========================================================= */
+    header {
+      background: none; /* Elimina el fondo de caja */
+      border-radius: 0;
+      padding: 0 0 40px 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-bottom: 2px solid var(--line); /* Línea divisoria suave */
+    }
+
+    .profile-image-placeholder {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid var(--bg); /* Borde con color de fondo */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .contact h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin: 0 0 5px;
+      color: var(--ink);
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin: 0 auto 20px;
+      max-width: 800px;
+    }
+
+    .kpis {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 30px;
+      padding-top: 20px;
+    }
+
+    .kpis a, .kpis div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .kpis a:hover {
+      color: var(--primary-color);
+    }
+
+    .ico {
+      font-size: 1.2rem;
+      color: var(--secondary-color); /* Iconos con acento más claro */
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ===== Contenido principal - Sin cajas ===== */
+    main {
+      display: grid;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    section {
+      background: none; /* Eliminar el fondo blanco de las secciones */
+      border: none;
+      border-radius: 0;
+      padding: 0; /* Eliminar padding innecesario */
+      box-shadow: none;
+      transition: none;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 20px;
+      color: var(--primary-color);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      position: relative;
+    }
+
+    /* Estilo de la Lista para la Experiencia - EL TIMELINE */
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 2px solid var(--line); /* La línea base del timeline */
+      padding-left: 20px;
+    }
+    
+    .list li {
+      position: relative;
+      padding: 0 0 35px 25px; /* Espacio para el punto y el texto */
+      border-top: none;
+    }
+
+    .list li:last-child {
+        padding-bottom: 0;
+    }
+
+    /* El punto del timeline */
+    .list li::before {
+        content: '';
+        position: absolute;
+        left: -11px; /* Posicionado para que quede sobre la línea */
+        top: 0;
+        width: 18px;
+        height: 18px;
+        background: var(--secondary-color);
+        border-radius: 50%;
+        border: 4px solid var(--bg); /* Borde que coincide con el fondo */
+        transition: background 0.3s ease;
+    }
+
+    /* Efecto de hover en el timeline */
+    .list li:hover::before {
+        background: var(--primary-color);
+        transform: scale(1.1);
+    }
+    
+    .list li:first-child {
+      padding-top: 0;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .item-sub {
+      color: var(--primary-color); /* El período de tiempo usa el color de acento */
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    /* Párrafos dentro de la experiencia */
+    .list li p {
+        margin-top: 8px;
+        color: var(--muted);
+    }
+
+
+    /* Badges más sutiles */
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      background: var(--accent-badge);
+      color: var(--accent-badge-text);
+      padding: 6px 12px;
+      border-radius: 4px; /* Más cuadrados, menos de píldora */
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    /* Idiomas y Certificaciones como listas simples */
+    section:nth-child(3) .list li,
+    section:nth-child(4) .list li,
+    section:nth-child(5) .list li {
+        padding: 8px 0;
+        border-top: none;
+    }
+    .list li::before { /* Eliminar puntos del timeline en otras secciones */
+        content: none; 
+    }
+    section:nth-child(3) .list,
+    section:nth-child(4) .list,
+    section:nth-child(5) .list {
+        border-left: none;
+        padding-left: 0;
+    }
+
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .layout {
+        padding: 30px 20px;
+        gap: 30px;
+      }
+      .contact h1 {
+        font-size: 2.2rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      .kpis {
+        justify-content: flex-start;
+        gap: 15px 20px;
+      }
+      main {
+        padding: 0 10px;
+      }
+      .list {
+          padding-left: 10px;
+      }
+      .list li {
+          padding-left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <header>
+      <div class="profile-image-placeholder">MD</div>
+      <div class="contact">
+        <h1>Mireya del Teso</h1>
+		<p class="subtitle"><strong>Cuerpo de Gestión de Sistemas e Informática - Centro de Investigaciones Sociológicas.</strong></p>
+        <p class="subtitle"><strong>Ingeniera Informática</strong> — Enfocada en la optimización de procesos de desarrollo, la automatización de pruebas y la integración de soluciones basadas en Inteligencia Artificial con el objetivo de impulsar la excelencia y la calidad del software..</p>
+        <div class="kpis">
+          <div><span class="ico">📍</span><span>Madrid, España</span></div>
+          <a href="mailto:mireya.delteso@gmail.com"><span class="ico">📧</span><span>mireya.delteso@gmail.com</span></a>
+          <a href="https://www.linkedin.com/in/mireya-del-teso-mancha/" target="_blank" rel="noopener"><span class="ico">🔗</span><span>LinkedIn</span></a>                    
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="section-title">Experiencia</h2>
+        <ul class="list">
+          <li>
+            <div class="item-title">Cuerpo de Gestión de Sistemas e Informática — Centro de Investigaciones Sociológicas (CIS)</div>
+            <div class="item-sub">Oct. 2024 – Actualidad</div>
+            <p>Responsable de la evolución de la aplicación de gestión de entrevistas que posee el CIS, asegurando la disponibilidad y calidad del servicio conforme a las directrices del sector público. Participación en la mejora de procesos y automatización de tareas.</p>
+            <div class="stack">
+              <span class="badge">Administración pública</span>
+              <span class="badge">Sistemas de información</span>
+              <span class="badge">Automatización</span>
+              <span class="badge">Soporte técnico</span>
+              <span class="badge">Mejora continua</span>
+            </div>
+          </li>
+          <li>
+            <div class="item-title">Scrum Master — PANEL Sistemas Informáticos</div>
+            <div class="item-sub">Feb. 2018 – Oct. 2024</div>
+            <p>Liderazgo de equipos multidisciplinares en proyectos de tarificación telefónica incluyendo: </br> 
+			  * Equipo de desarrollo de Interfaces Gráficas (GUIs) de sistema AltamirA (tarificación en tiempo real de Telefónica)</br>
+			  * Equipo de aseguramiento de la calidad del sistema AltamirA.</p>
+          </li>
+          <li>
+            <div class="item-title">Analista de Seguridad — PANEL Sistemas Informáticos</div>
+            <div class="item-sub">Mar. 2023 – Jun. 2023</div>
+            <p>Ejecución y análisis de pruebas SAST/DAST sobre la aplicación El Parking para Mutua Madrileña. incluyendo la identificación de vulnerabilidades y la elaboración de propuestas de solución técnica a los problemas detectados </p>
+            <div class="stack">
+              <span class="badge">SAST</span>
+              <span class="badge">DAST</span>
+              <span class="badge">Seguridad Aplicaciones</span>
+              <span class="badge">Microservicios</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-title">Competencias</h2>
+        <div class="stack">
+          <span class="badge">Liderazgo de equipos</span>
+          <span class="badge">Gestión de requisitos</span>
+          <span class="badge">Diseño/Ejecución de pruebas</span>
+          <span class="badge">Entornos Java / SOAP / REST</span>
+          <span class="badge">Automatización de Workflows</span>
+          <span class="badge">Integración continua: Jenkins</span>
+          <span class="badge">BBDD: Oracle</span>
+          <span class="badge">CMMI</span>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Formación</h2>
+        <ul class="list">
+          <li>
+            <div class="item-title">Ingeniería Informática — Universidad de León</div>
+            <div class="item-sub">1998 – 2003</div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-title">Certificaciones</h2>
+        <ul class="list">
+          <li><div class="item-title">ISTQB Certified Tester Advanced Level — Test Manager</div></li>
+          <li><div class="item-title">ISTQB Certified Tester Foundation Level</div></li>
+          <li><div class="item-title">CMMI for Development v1.3 & Services</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-title">Idiomas</h2>
+        <ul class="list">
+          <li><strong>Español:</strong> Lengua materna</li>
+          <li><strong>Inglés:</strong> B2</li>
+        </ul>
+      </section>
+
+      <footer>© <span id="year"></span> · Mireya del Teso — Madrid, España</footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
